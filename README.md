@@ -3,6 +3,6 @@
 ### 第1章：数値計算ことはじめ
 
 - Julia/quantmacro_chapter1.ipynb
-  - Juliaの簡単な使い方と数値計算誤差(1.7節)について説明をしたJupyter Notebook
+  - Juliaの簡単な使い方と「1.7節 計算誤差は必ず存在する」について説明をしたJupyter Notebook
 - Julia/quantmacro_chapter1.html
-  - 拡張子が.ipynbのファイルはJupyter Notebook(あるいはJupyter Lab)から開く必要があるため、htmlファイルも同梱しています。こちらをダブルクリックすると普段使っているウェブブラウザから開くことが出来るはずです。ただし、こちらは計算結果が埋め込まれていて、結果を眺めるだけで、自力で計算結果を確かめることは出来ません。
+  - 拡張子が.ipynbのファイルはJupyter Notebook(あるいはJupyter Lab)から開く必要があるため、htmlファイルも同梱しています。ダブルクリックすると普段使っているウェブブラウザから開くことが出来ます。ただし、こちらは計算結果が埋め込まれていて、結果を眺めるだけで、自力で計算結果を確かめることは出来ません。コードを実行したい場合、Juliaの環境設定マニュアルを読みながら、JuliaとJupyter Notebookをインストールしてください。

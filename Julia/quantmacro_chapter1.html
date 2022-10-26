@@ -14596,41 +14596,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Julia%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%9E%8B(Type)">Julia&#12395;&#12362;&#12369;&#12427;&#22411;(Type)<a class="anchor-link" href="#Julia%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%9E%8B(Type)">&#182;</a></h2><ul>
-<li>Juliaは<strong>動的型付け (dynamic typing)</strong> の言語なので変数の<strong>型（type）</strong>を気にする必要は基本的にはない</li>
-<li>型とはなにか?<ul>
-<li>例えば、コンピュータ上は3と3.0は別物として区別する</li>
-<li>前者は<strong>整数 (Integer)</strong> で後者は<strong>浮動小数点 (Floating Point Number: Float)</strong> と呼ばれる</li>
-<li>MatlabやJulia、Pythonなど(動的型付けの言語)ではあまり深く考えなくても、多くの場合、直感的に処理をしてくれる<ul>
-<li>例1：3 + 3.0 = 6.0</li>
-<li>例2：2 + 2.1 = 4.1</li>
-<li>ただし<strong>常に</strong>自分の思っているとおりに処理してくれるとは限らないかも</li>
-</ul>
-</li>
-<li>C言語やFortranなどの<strong>静的型付け (static typing)</strong> の言語では必ず事前に変数の型を決めておく必要がある(<strong>宣言</strong>)<ul>
-<li>integer a = 3 ←整数として変数aを定義</li>
-<li>float b = 3.0 ←浮動小数点として変数bを定義</li>
-<li>⬆はイメージで実際のFortranやC言語の記法ではない</li>
-</ul>
-</li>
-<li>a + bを計算しようとすると「型が違う！」と怒られる</li>
-<li>浮動小数点とは何かをしっかり学びたい場合、例えばクアルテローニ他(2014)の第1章を参照</li>
-</ul>
-</li>
-<li>加えて、コンピュータでは数字の表現の仕方(<strong>2進法</strong>)によって、表示できる桁数に違いがある<ul>
-<li>8ビット、16ビット、32ビット、64ビットで最大桁数が異なる<ul>
-<li>初代のファミコンは8ビット、スーパーファミコンは16ビット、プレイステーションは32ビットとだんだん性能が上がっていった！</li>
-</ul>
-</li>
-<li>それぞれInt32、Int64、Float64みたいな感じで表現される</li>
-</ul>
-</li>
-<li>Juliaではデフォルトで64ビットになる：⬇を参照<ul>
-<li>かなり古いPCを使っている場合この限りではないが、めったにいないはず</li>
-</ul>
-</li>
-<li>Juliaでは整数+浮動小数点は浮動小数点に揃えてくれる<ul>
-<li>掛け算や割り算なども自動で調整してくれるけど、ちゃんとルールを把握しないで異なる型同士の演算は<strong>避けたほうが無難</strong></li>
+<hr>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>本Notebookを作成した際の環境は以下の通りです。</li>
+<li>計算速度などについては使用するPCによって違いがあります。</li>
+<li>また、Juliaのバージョンによって、多少コマンドに違いがある可能性があります。<ul>
+<li>よほど古いバージョンを使っていなければおそらく大丈夫ですが。</li>
 </ul>
 </li>
 </ul>
@@ -14646,8 +14628,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># 整数</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">versioninfo</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14665,13 +14646,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>3</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Julia Version 1.7.3
+Commit 742b9abb4d (2022-05-06 12:58 UTC)
+Platform Info:
+  OS: macOS (x86_64-apple-darwin21.4.0)
+  CPU: Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
+</pre>
+</div>
 </div>
 
 </div>
@@ -14679,7 +14667,66 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
 
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Julia%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%9E%8B(Type)">Julia&#12395;&#12362;&#12369;&#12427;&#22411;(Type)<a class="anchor-link" href="#Julia%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%9E%8B(Type)">&#182;</a></h2><ul>
+<li>Juliaは<strong>動的型付け (dynamic typing)</strong> の言語なので変数の<strong>型（type）</strong>を気にする必要は基本的にはない</li>
+<li>型とはなにか?<ul>
+<li>例えば、コンピュータ上は3と3.0は別物として区別する</li>
+<li>前者は<strong>整数 (Integer)</strong> で後者は<strong>浮動小数点数 (Floating Point Number: Float)</strong> と呼ばれる</li>
+<li>MatlabやJulia、Pythonなどの動的型付けの言語ではあまり深く考えなくても、多くの場合、直感的に処理をしてくれる<ul>
+<li>例1：3 + 3.0 = 6.0</li>
+<li>例2：2 + 2.1 = 4.1</li>
+<li>ただし<strong>常に</strong>自分の思っているとおりに処理してくれるとは限らないので一応意識すべき</li>
+</ul>
+</li>
+<li>C言語やFortranなどの<strong>静的型付け (static typing)</strong> の言語では必ず事前に変数の型を決めておく必要がある(<strong>宣言</strong>)<ul>
+<li>integer a = 3 ←整数として変数aを定義</li>
+<li>float b = 3.0 ←浮動小数点として変数bを定義</li>
+<li>⬆はイメージで実際のFortranやC言語の記法ではありません</li>
+</ul>
+</li>
+<li>a + bを計算しようとすると「型が違う！」と怒られる</li>
+<li>浮動小数点数とは何かをしっかり学びたい場合、例えばクアルテローニ他(2014)の第1章を参照</li>
+</ul>
+</li>
+<li>加えて、コンピュータでは数字の表現の仕方(<strong>2進法</strong>)によって、表示できる桁数に違いがある<ul>
+<li>8ビット、16ビット、32ビット、64ビットで最大桁数が異なる<ul>
+<li>初代のファミコンは8ビット、スーパーファミコンは16ビット、プレイステーションは32ビットとだんだん性能が上がっていった！</li>
+</ul>
+</li>
+<li>それぞれInt32、Int64、Float64みたいな感じで表現される</li>
+</ul>
+</li>
+<li>Juliaではデフォルトで64ビットになる：⬇を参照<ul>
+<li>かなり古いPCを使っている場合この限りではないが、めったにいないはず</li>
+</ul>
+</li>
+<li>Juliaでは整数+浮動小数点数は浮動小数点数に揃えてくれる<ul>
+<li>掛け算や割り算なども自動で調整してくれるけど、ちゃんとルールを把握しないで異なる型同士の演算は<strong>避けたほうが無難</strong></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14688,8 +14735,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># 型を確認する</span>
-<span class="n">typeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># 整数</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 
      </div>
@@ -14713,7 +14760,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Int64</pre>
+<pre>3</pre>
 </div>
 
 </div>
@@ -14730,8 +14777,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># 浮動小数点</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">3.0</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># 型を確認する</span>
+<span class="n">typeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14755,7 +14802,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>3.0</pre>
+<pre>Int64</pre>
 </div>
 
 </div>
@@ -14772,7 +14819,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># 浮動小数点数</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">3.0</span>
 </pre></div>
 
      </div>
@@ -14796,7 +14844,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Float64</pre>
+<pre>3.0</pre>
 </div>
 
 </div>
@@ -14813,7 +14861,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14837,7 +14885,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>6.0</pre>
+<pre>Float64</pre>
 </div>
 
 </div>
@@ -14852,6 +14900,47 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>6.0</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
@@ -14872,7 +14961,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -14907,7 +14996,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="%E4%BE%8B%EF%BC%9A%E6%95%B4%E6%95%B0%E3%81%A8%E6%B5%AE%E5%8B%95%E5%B0%8F%E6%95%B0%E7%82%B9%E3%81%AE%E9%81%95%E3%81%84%E3%82%92%E6%B0%97%E3%81%AB%E3%81%97%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AB%E5%95%8F%E9%A1%8C%E3%81%8C%E8%B5%B7%E3%81%93%E3%82%8B%E4%BA%8B%E4%BE%8B">&#20363;&#65306;&#25972;&#25968;&#12392;&#28014;&#21205;&#23567;&#25968;&#28857;&#12398;&#36949;&#12356;&#12434;&#27671;&#12395;&#12375;&#12394;&#12363;&#12387;&#12383;&#22580;&#21512;&#12395;&#21839;&#38988;&#12364;&#36215;&#12371;&#12427;&#20107;&#20363;<a class="anchor-link" href="#%E4%BE%8B%EF%BC%9A%E6%95%B4%E6%95%B0%E3%81%A8%E6%B5%AE%E5%8B%95%E5%B0%8F%E6%95%B0%E7%82%B9%E3%81%AE%E9%81%95%E3%81%84%E3%82%92%E6%B0%97%E3%81%AB%E3%81%97%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AB%E5%95%8F%E9%A1%8C%E3%81%8C%E8%B5%B7%E3%81%93%E3%82%8B%E4%BA%8B%E4%BE%8B">&#182;</a></h2><ul>
-<li>べき乗の計算では整数を使うか、浮動小数点を使うかで計算速度が変わる</li>
+<li>べき乗の計算では整数を使うか、浮動小数点数を使うかで計算速度が変わる</li>
 <li>例：5の2乗と5の2.0乗は計算速度が異なる<ul>
 <li>当然、数学上は全く同じ</li>
 <li>コンピュータ上の計算処理の仕方が異なるため</li>
@@ -14924,7 +15013,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
@@ -14945,7 +15034,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -14965,7 +15054,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">2.0</span>
@@ -14986,7 +15075,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -15021,7 +15110,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># 5の2乗を1000万回計算してみる</span>
@@ -15049,7 +15138,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.139026 seconds (15 allocations: 864 bytes, 1.66% compilation time)
+<pre>  0.183171 seconds (15 allocations: 864 bytes, 1.19% compilation time)
 </pre>
 </div>
 </div>
@@ -15063,7 +15152,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># 5の2.0乗を1000万回計算してみる：こちらのほうが遅い</span>
@@ -15091,7 +15180,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.399429 seconds (10.01 M allocations: 152.855 MiB, 4.58% gc time, 1.79% compilation time)
+<pre>  0.466233 seconds (10.01 M allocations: 152.855 MiB, 4.73% gc time, 2.27% compilation time)
 </pre>
 </div>
 </div>
@@ -15105,10 +15194,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># 直書きが一番はやい：なぜ?</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># ちなみに直書きが一番はやい</span>
 <span class="nd">@time</span> <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10000000</span>
     <span class="n">ans</span> <span class="o">=</span> <span class="mi">5</span><span class="o">^</span><span class="mi">2</span>
 <span class="k">end</span>
@@ -15166,7 +15255,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>tmpは1000万個の要素を持つ<strong>配列(ベクトル)</strong></li>
 </ul>
 </li>
-<li>⬆の例だと5の2乗を1000万回計算して、その結果はすべて捨てていた<ul>
+<li>⬆の例だと5の2乗を1000万回計算したけど、その結果はどこにも残っていない<ul>
 <li>途中の計算結果を取り出すことは出来ない</li>
 </ul>
 </li>
@@ -15185,7 +15274,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># 5の2乗を1000万回計算してみる</span>
@@ -15215,7 +15304,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.963350 seconds (30.00 M allocations: 610.336 MiB, 15.84% gc time)
+<pre>  0.997873 seconds (30.00 M allocations: 610.336 MiB, 14.10% gc time)
 </pre>
 </div>
 </div>
@@ -15229,7 +15318,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># 5の2.0乗を1000万回計算してみる</span>
@@ -15259,7 +15348,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  1.102978 seconds (40.00 M allocations: 762.925 MiB, 5.23% gc time, 0.23% compilation time)
+<pre>  1.135171 seconds (40.00 M allocations: 762.925 MiB, 4.84% gc time, 0.34% compilation time)
 </pre>
 </div>
 </div>
@@ -15273,7 +15362,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># やはり直書きが一番早い</span>
@@ -15303,7 +15392,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.854587 seconds (30.00 M allocations: 610.336 MiB, 21.61% gc time)
+<pre>  0.932512 seconds (30.00 M allocations: 610.336 MiB, 19.67% gc time)
 </pre>
 </div>
 </div>
@@ -15336,10 +15425,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>昔のゲームでHPの上限が255だったり、65535だったりした理由</li>
 </ul>
 </li>
-<li>今のコンピュータの性能は大幅に上昇したけど、コンピュータは<strong>無限</strong>は扱えないので必ずどこかに上限・下限が存在している</li>
+<li>今のコンピュータの性能は大幅に上昇したけど、それでも必ずどこかに上限・下限が存在している</li>
 <li>よほどの事がないと超えることはないかも知れないけど、超えるとオーバーフロー(0に戻る)を起こしたりする<ul>
 <li>昔のゲームはこれでよくバグっていた</li>
-<li>上限・下限を超えた場合に何が起こるのかは言語依存なので要注意<ul>
+<li>上限・下限を超えた場合に何が起こるのかは<strong>言語依存</strong>なので要注意<ul>
 <li>無限扱いになったり、マイナスになったり</li>
 </ul>
 </li>
@@ -15366,51 +15455,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Int64</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>9223372036854775807</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Int32</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Int64</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15434,7 +15482,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>2147483647</pre>
+<pre>9223372036854775807</pre>
 </div>
 
 </div>
@@ -15451,7 +15499,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">x3</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Int64</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Int32</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15475,7 +15523,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>-9223372036854775808</pre>
+<pre>2147483647</pre>
 </div>
 
 </div>
@@ -15492,7 +15540,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">x4</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Int32</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">x3</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Int64</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15516,6 +15564,47 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>-9223372036854775808</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">x4</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Int32</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>-2147483648</pre>
 </div>
 
@@ -15533,7 +15622,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="%E6%9C%80%E5%A4%A7%E5%80%A4%E3%82%92%E8%B6%85%E3%81%88%E3%81%9F%E5%A0%B4%E5%90%88%E3%80%81%E3%81%A9%E3%81%86%E3%81%AA%E3%82%8B%E3%81%AE%E3%81%8B?">&#26368;&#22823;&#20516;&#12434;&#36229;&#12360;&#12383;&#22580;&#21512;&#12289;&#12393;&#12358;&#12394;&#12427;&#12398;&#12363;?<a class="anchor-link" href="#%E6%9C%80%E5%A4%A7%E5%80%A4%E3%82%92%E8%B6%85%E3%81%88%E3%81%9F%E5%A0%B4%E5%90%88%E3%80%81%E3%81%A9%E3%81%86%E3%81%AA%E3%82%8B%E3%81%AE%E3%81%8B?">&#182;</a></h3><ul>
-<li>Juliaの場合</li>
+<li>Juliaの場合：マイナスになってしまった！</li>
 </ul>
 
 </div>
@@ -15544,7 +15633,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x5</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">1</span>
@@ -15565,7 +15654,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -15596,51 +15685,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Float64</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Inf</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">y2</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Float32</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Float64</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15664,7 +15712,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Inf32</pre>
+<pre>Inf</pre>
 </div>
 
 </div>
@@ -15681,7 +15729,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">y3</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Float64</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">y2</span> <span class="o">=</span> <span class="n">typemax</span><span class="p">(</span><span class="kt">Float32</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15705,7 +15753,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>-Inf</pre>
+<pre>Inf32</pre>
 </div>
 
 </div>
@@ -15722,7 +15770,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Float32</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">y3</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Float64</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15746,7 +15794,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>-Inf32</pre>
+<pre>-Inf</pre>
 </div>
 
 </div>
@@ -15761,6 +15809,47 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="n">typemin</span><span class="p">(</span><span class="kt">Float32</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>-Inf32</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">y5</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="mf">1.0</span>
@@ -15781,7 +15870,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
@@ -15832,69 +15921,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.3333333333333333</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Juliaではうまいことやっていて3をかけると1に戻るようになっているみたい<ul>
-<li>細かい仕組みは技術書を確認しましょう</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="mi">3</span>
-<span class="n">b</span> <span class="o">==</span> <span class="mf">1.0</span> <span class="c"># bが1.0と等しいかをチェック</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
 </pre></div>
 
      </div>
@@ -15918,7 +15948,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>true</pre>
+<pre>0.3333333333333333</pre>
 </div>
 
 </div>
@@ -15927,6 +15957,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Juliaではうまいことやっていて3をかけると1に戻るようになっているみたい<ul>
+<li>細かい仕組みは技術書を確認してください</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15935,7 +15982,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">7</span> <span class="c"># 同じく循環小数</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="mi">3</span>
+<span class="n">b</span> <span class="o">==</span> <span class="mf">1.0</span> <span class="c"># bが1.0と等しいかをチェック</span>
 </pre></div>
 
      </div>
@@ -15959,7 +16007,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.14285714285714285</pre>
+<pre>true</pre>
 </div>
 
 </div>
@@ -15968,23 +16016,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>有理数を扱いたい場合、Juliaは<strong>Rational</strong>という特別な型を用意している<ul>
-<li>経済学ではそんなに使いみちがなさそうだけど...</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15993,7 +16024,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="o">//</span><span class="mi">7</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">7</span> <span class="c"># 同じく循環小数</span>
 </pre></div>
 
      </div>
@@ -16017,6 +16048,64 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0.14285714285714285</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>有理数を扱いたい場合、Juliaは<strong>Rational</strong>という特別な型を用意している<ul>
+<li>経済学ではあまり使いみちがなさそうだけど...</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="o">//</span><span class="mi">7</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>1//7</pre>
 </div>
 
@@ -16031,7 +16120,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
@@ -16052,7 +16141,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 
 
 
@@ -16118,51 +16207,10 @@ $$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1234567890123456789</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1234567890123456789</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.000000000000000001</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1234567890123456789</span>
 </pre></div>
 
      </div>
@@ -16186,7 +16234,7 @@ $$
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1.0e-18</pre>
+<pre>1234567890123456789</pre>
 </div>
 
 </div>
@@ -16203,7 +16251,7 @@ $$
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.000000000000000001</span>
 </pre></div>
 
      </div>
@@ -16227,7 +16275,7 @@ $$
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1.2345678901234568e18</pre>
+<pre>1.0e-18</pre>
 </div>
 
 </div>
@@ -16242,6 +16290,47 @@ $$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>1.2345678901234568e18</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.000000000000001</span>
@@ -16263,7 +16352,7 @@ $$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 
 
 
